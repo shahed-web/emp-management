@@ -1,16 +1,14 @@
-"use client"
-import React from 'react';
-import { Table } from 'antd';
-import { columns } from './columns';
-import { data, DataType } from '@/lib/mock-data';
+import ContentPage from './ContentPage';
+import styles from '../page.module.css';
+interface PageProps {
+  searchParams: Record<string, string | string[] | undefined>;
+}
 
-
-
-const page: React.FC = () => (
-  <Table<DataType>
-    columns={columns} 
-    dataSource={data}
-  />
-);
+const page: React.FC<PageProps> = async ({searchParams}) => {
+  return(
+    <div className={styles.page}>
+    <ContentPage />
+    </div>
+)};
 
 export default page;
